@@ -1,0 +1,28 @@
+This repository contains code derived from the following projects.
+
+LLaVA -- https://github.com/haotian-liu/LLaVA
+  Copyright 2023 Haotian Liu et al. Licensed under the Apache License 2.0.
+  llava/ is derived from LLaVA-1.5. Training and serving code was removed;
+  inference and evaluation code is kept.
+
+LLaVA-PruMerge -- https://github.com/42Shawn/LLaVA-PruMerge
+  Copyright Yuzhang Shang, Mu Cai, Bingxin Xu et al. Licensed under the Apache License 2.0.
+  This codebase started as a fork of LLaVA-PruMerge. The PruMerge token-reduction
+  functions (outlier_dectection, token_prune_merge_advanced*) remain in
+  llava/model/multimodal_encoder/clip_encoder.py; latency/measure_edge.py uses
+  outlier_dectection to time the PruMerge comparison point.
+
+PruneSID -- https://github.com/ZhengyaoFang/PruneSID
+  Fang et al., "Prune Redundancy, Preserve Essence: Vision Token Compression in
+  VLMs via Synergistic Importance-Diversity", ICLR 2026. Licensed under the Apache License 2.0.
+  _prunesid_batch_pca, _prunesid_similarity_nms and the cluster-quota selection in
+  CLIPVisionTower.token_prunesid_quant_select are ported from PruneSID's
+  prunesid_llava/clip_encoder.py. They were modified to add a seeded PCA and to
+  hand the selected tokens on to the sink-aware tiered quantization.
+
+turboquant-pytorch -- https://github.com/tonbistudio/turboquant-pytorch (commit 9997138)
+  Copyright (c) 2026 tonbistudio. Licensed under the MIT License (turboquant/LICENSE).
+  turboquant/compressors_v3.py was modified (StratifiedCompressor added);
+  the other files are unmodified.
+
+All other code is (c) the authors of this paper and is released under the Apache License 2.0 (LICENSE).

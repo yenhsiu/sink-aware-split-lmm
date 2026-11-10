@@ -1,0 +1,537 @@
+{
+  "dataset": "vqav2",
+  "n_trials": 50,
+  "split_ratio": 0.023326,
+  "timestamp": "2026-08-06T15:48:12.946887",
+  "results": [
+    {
+      "dataset": "vqav2",
+      "S": 439000,
+      "n4": 4,
+      "n2": 111,
+      "n1": 190,
+      "N": 305,
+      "top_ratio": 0.013114754098360656,
+      "score": 75.64,
+      "anchors": [
+        {
+          "n4": 0,
+          "n2": 0,
+          "n1": 428
+        },
+        {
+          "n4": 0,
+          "n2": 214,
+          "n1": 0
+        },
+        {
+          "n4": 107,
+          "n2": 0,
+          "n1": 0
+        }
+      ],
+      "trials": [
+        {
+          "trial": 0,
+          "n4": 0,
+          "n2": 0,
+          "n1": 428,
+          "N": 428,
+          "source": "anchor",
+          "score": 74.81,
+          "state": "complete"
+        },
+        {
+          "trial": 1,
+          "n4": 0,
+          "n2": 214,
+          "n1": 0,
+          "N": 214,
+          "source": "anchor",
+          "score": 75.37,
+          "state": "complete"
+        },
+        {
+          "trial": 2,
+          "n4": 107,
+          "n2": 0,
+          "n1": 0,
+          "N": 107,
+          "source": "anchor",
+          "score": 74.38,
+          "state": "complete"
+        },
+        {
+          "trial": 3,
+          "n4": 40,
+          "n2": 128,
+          "n1": 12,
+          "N": 180,
+          "source": "tpe",
+          "score": 74.97,
+          "state": "complete"
+        },
+        {
+          "trial": 4,
+          "n4": 79,
+          "n2": 34,
+          "n1": 44,
+          "N": 157,
+          "source": "tpe",
+          "score": 75.27,
+          "state": "complete"
+        },
+        {
+          "trial": 5,
+          "n4": 16,
+          "n2": 28,
+          "n1": 308,
+          "N": 352,
+          "source": "tpe",
+          "score": 75.21,
+          "state": "complete"
+        },
+        {
+          "trial": 6,
+          "n4": 6,
+          "n2": 175,
+          "n1": 54,
+          "N": 235,
+          "source": "tpe",
+          "score": 75.52,
+          "state": "complete"
+        },
+        {
+          "trial": 7,
+          "n4": 64,
+          "n2": 61,
+          "n1": 50,
+          "N": 175,
+          "source": "tpe",
+          "score": 75.08,
+          "state": "complete"
+        },
+        {
+          "trial": 8,
+          "n4": 2,
+          "n2": 204,
+          "n1": 12,
+          "N": 218,
+          "source": "tpe",
+          "score": 75.17,
+          "state": "complete"
+        },
+        {
+          "trial": 9,
+          "n4": 89,
+          "n2": 7,
+          "n1": 58,
+          "N": 154,
+          "source": "tpe",
+          "score": 74.69,
+          "state": "complete"
+        },
+        {
+          "trial": 10,
+          "n4": 41,
+          "n2": 95,
+          "n1": 74,
+          "N": 210,
+          "source": "tpe",
+          "score": 75.22,
+          "state": "complete"
+        },
+        {
+          "trial": 11,
+          "n4": 24,
+          "n2": 165,
+          "n1": 2,
+          "N": 191,
+          "source": "tpe",
+          "score": 75.2,
+          "state": "complete"
+        },
+        {
+          "trial": 12,
+          "n4": 20,
+          "n2": 164,
+          "n1": 20,
+          "N": 204,
+          "source": "tpe",
+          "score": 75.15,
+          "state": "complete"
+        },
+        {
+          "trial": 13,
+          "n4": 37,
+          "n2": 140,
+          "n1": 0,
+          "N": 177,
+          "source": "tpe",
+          "score": 0.0,
+          "state": "complete"
+        },
+        {
+          "trial": 14,
+          "n4": 10,
+          "n2": 194,
+          "n1": 0,
+          "N": 204,
+          "source": "tpe",
+          "score": 0.0,
+          "state": "complete"
+        },
+        {
+          "trial": 15,
+          "n4": 30,
+          "n2": 143,
+          "n1": 22,
+          "N": 195,
+          "source": "tpe",
+          "score": 75.25,
+          "state": "complete"
+        },
+        {
+          "trial": 16,
+          "n4": 51,
+          "n2": 90,
+          "n1": 44,
+          "N": 185,
+          "source": "tpe",
+          "score": 75.31,
+          "state": "complete"
+        },
+        {
+          "trial": 17,
+          "n4": 10,
+          "n2": 176,
+          "n1": 36,
+          "N": 222,
+          "source": "tpe",
+          "score": 75.39,
+          "state": "complete"
+        },
+        {
+          "trial": 18,
+          "n4": 12,
+          "n2": 172,
+          "n1": 36,
+          "N": 220,
+          "source": "tpe",
+          "score": 75.23,
+          "state": "complete"
+        },
+        {
+          "trial": 19,
+          "n4": 28,
+          "n2": 113,
+          "n1": 90,
+          "N": 231,
+          "source": "tpe",
+          "score": 75.25,
+          "state": "complete"
+        },
+        {
+          "trial": 20,
+          "n4": 57,
+          "n2": 90,
+          "n1": 20,
+          "N": 167,
+          "source": "tpe",
+          "score": 75.21,
+          "state": "complete"
+        },
+        {
+          "trial": 21,
+          "n4": 7,
+          "n2": 181,
+          "n1": 38,
+          "N": 226,
+          "source": "tpe",
+          "score": 75.38,
+          "state": "complete"
+        },
+        {
+          "trial": 22,
+          "n4": 10,
+          "n2": 180,
+          "n1": 28,
+          "N": 218,
+          "source": "tpe",
+          "score": 75.24,
+          "state": "complete"
+        },
+        {
+          "trial": 23,
+          "n4": 8,
+          "n2": 143,
+          "n1": 110,
+          "N": 261,
+          "source": "tpe",
+          "score": 75.54,
+          "state": "complete"
+        },
+        {
+          "trial": 24,
+          "n4": 18,
+          "n2": 151,
+          "n1": 54,
+          "N": 223,
+          "source": "tpe",
+          "score": 75.34,
+          "state": "complete"
+        },
+        {
+          "trial": 25,
+          "n4": 31,
+          "n2": 126,
+          "n1": 52,
+          "N": 209,
+          "source": "tpe",
+          "score": 75.28,
+          "state": "complete"
+        },
+        {
+          "trial": 26,
+          "n4": 19,
+          "n2": 154,
+          "n1": 44,
+          "N": 217,
+          "source": "tpe",
+          "score": 75.29,
+          "state": "complete"
+        },
+        {
+          "trial": 27,
+          "n4": 7,
+          "n2": 121,
+          "n1": 158,
+          "N": 286,
+          "source": "tpe",
+          "score": 75.33,
+          "state": "complete"
+        },
+        {
+          "trial": 28,
+          "n4": 14,
+          "n2": 151,
+          "n1": 70,
+          "N": 235,
+          "source": "tpe",
+          "score": 75.39,
+          "state": "complete"
+        },
+        {
+          "trial": 29,
+          "n4": 1,
+          "n2": 188,
+          "n1": 48,
+          "N": 237,
+          "source": "tpe",
+          "score": 74.93,
+          "state": "complete"
+        },
+        {
+          "trial": 30,
+          "n4": 24,
+          "n2": 134,
+          "n1": 64,
+          "N": 222,
+          "source": "tpe",
+          "score": 75.57,
+          "state": "complete"
+        },
+        {
+          "trial": 31,
+          "n4": 24,
+          "n2": 138,
+          "n1": 56,
+          "N": 218,
+          "source": "tpe",
+          "score": 75.37,
+          "state": "complete"
+        },
+        {
+          "trial": 32,
+          "n4": 4,
+          "n2": 111,
+          "n1": 190,
+          "N": 305,
+          "source": "tpe",
+          "score": 75.64,
+          "state": "complete"
+        },
+        {
+          "trial": 33,
+          "n4": 1,
+          "n2": 106,
+          "n1": 212,
+          "N": 319,
+          "source": "tpe",
+          "score": 75.38,
+          "state": "complete"
+        },
+        {
+          "trial": 34,
+          "n4": 35,
+          "n2": 113,
+          "n1": 62,
+          "N": 210,
+          "source": "tpe",
+          "score": 75.11,
+          "state": "complete"
+        },
+        {
+          "trial": 35,
+          "n4": 24,
+          "n2": 77,
+          "n1": 178,
+          "N": 279,
+          "source": "tpe",
+          "score": 75.33,
+          "state": "complete"
+        },
+        {
+          "trial": 36,
+          "n4": 0,
+          "n2": 129,
+          "n1": 170,
+          "N": 299,
+          "source": "tpe",
+          "score": 75.42,
+          "state": "complete"
+        },
+        {
+          "trial": 37,
+          "n4": 44,
+          "n2": 104,
+          "n1": 44,
+          "N": 192,
+          "source": "tpe",
+          "score": 75.21,
+          "state": "complete"
+        },
+        {
+          "trial": 38,
+          "n4": 6,
+          "n2": 78,
+          "n1": 248,
+          "N": 332,
+          "source": "tpe",
+          "score": 75.38,
+          "state": "complete"
+        },
+        {
+          "trial": 39,
+          "n4": 16,
+          "n2": 159,
+          "n1": 46,
+          "N": 221,
+          "source": "tpe",
+          "score": 75.43,
+          "state": "complete"
+        },
+        {
+          "trial": 40,
+          "n4": 104,
+          "n2": 2,
+          "n1": 8,
+          "N": 114,
+          "source": "tpe",
+          "score": 74.69,
+          "state": "complete"
+        },
+        {
+          "trial": 41,
+          "n4": 17,
+          "n2": 162,
+          "n1": 36,
+          "N": 215,
+          "source": "tpe",
+          "score": 75.43,
+          "state": "complete"
+        },
+        {
+          "trial": 42,
+          "n4": 6,
+          "n2": 133,
+          "n1": 138,
+          "N": 277,
+          "source": "tpe",
+          "score": 75.23,
+          "state": "complete"
+        },
+        {
+          "trial": 43,
+          "n4": 14,
+          "n2": 156,
+          "n1": 60,
+          "N": 230,
+          "source": "tpe",
+          "score": 75.3,
+          "state": "complete"
+        },
+        {
+          "trial": 44,
+          "n4": 24,
+          "n2": 143,
+          "n1": 46,
+          "N": 213,
+          "source": "tpe",
+          "score": 74.85,
+          "state": "complete"
+        },
+        {
+          "trial": 45,
+          "n4": 21,
+          "n2": 120,
+          "n1": 104,
+          "N": 245,
+          "source": "tpe",
+          "score": 75.21,
+          "state": "complete"
+        },
+        {
+          "trial": 46,
+          "n4": 15,
+          "n2": 167,
+          "n1": 34,
+          "N": 216,
+          "source": "tpe",
+          "score": 75.29,
+          "state": "complete"
+        },
+        {
+          "trial": 47,
+          "n4": 4,
+          "n2": 48,
+          "n1": 316,
+          "N": 368,
+          "source": "tpe",
+          "score": 75.09,
+          "state": "complete"
+        },
+        {
+          "trial": 48,
+          "n4": 32,
+          "n2": 135,
+          "n1": 30,
+          "N": 197,
+          "source": "tpe",
+          "score": 75.27,
+          "state": "complete"
+        },
+        {
+          "trial": 49,
+          "n4": 70,
+          "n2": 69,
+          "n1": 10,
+          "N": 149,
+          "source": "tpe",
+          "score": 74.99,
+          "state": "complete"
+        }
+      ]
+    }
+  ]
+}

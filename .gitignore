@@ -1,0 +1,19 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.DS_Store
+.ipynb_checkpoints/
+
+# data, checkpoints, outputs
+playground/
+checkpoints/
+third_party/
+results/
+*.log
+*.bin
+*.safetensors
+*.pt
+*.pth
+
+# regenerable per-budget tier visualizations
+paper/figures/token_tier_viz/

@@ -1,0 +1,53 @@
+{
+  "description": "Budget-optimal (n4, n2, n1) LUT searched on a 5,000-question VQAv2 val subset (quantization_search.py, TPE 50 trials; exhaustive at 25,600). Budget key = bits/1024 * 1024 convention used throughout the code: 4*n4 + 2*n2 + n1 = budget // 1024. Source: paper/paper_data.py ANCHOR_CONFIGS.",
+  "budgets": {
+    "25600": {
+      "n4": 0,
+      "n2": 2,
+      "n1": 21,
+      "N": 23
+    },
+    "41000": {
+      "n4": 0,
+      "n2": 0,
+      "n1": 40,
+      "N": 40
+    },
+    "66000": {
+      "n4": 0,
+      "n2": 0,
+      "n1": 64,
+      "N": 64
+    },
+    "106000": {
+      "n4": 1,
+      "n2": 21,
+      "n1": 57,
+      "N": 79
+    },
+    "170000": {
+      "n4": 8,
+      "n2": 55,
+      "n1": 24,
+      "N": 87
+    },
+    "273000": {
+      "n4": 2,
+      "n2": 77,
+      "n1": 104,
+      "N": 183
+    },
+    "439000": {
+      "n4": 4,
+      "n2": 111,
+      "n1": 190,
+      "N": 305
+    },
+    "589824": {
+      "n4": 25,
+      "n2": 206,
+      "n1": 64,
+      "N": 295
+    }
+  }
+}
