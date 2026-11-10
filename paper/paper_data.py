@@ -578,6 +578,8 @@ BASELINE_FP16 = {
 # budget; only the treatment of detected sink candidates changes:
 #   pin       -- detected sinks pinned to the lowest tier (the method)
 #   no_sink   -- no sink detection (--no-sink-filter)
+#   no_cap    -- like pin, but every token above 100x the median is a sink,
+#                not only the top two (--sink-max-candidates 576)
 #   capa_rank -- no sink detection; tokens ranked by CAPA contribution
 # Reproduce: python reproduce.py sink
 # ============================================================
@@ -586,57 +588,65 @@ ABLATION_SINK_MME_SEEDED = {
         "n4": 0, "n2": 2, "n1": 21,
         "pin":       {"seeds": [1555.87, 1552.71, 1497.15], "mean": 1535.24, "stdev": 33.03},
         "no_sink":   {"seeds": [1508.53, 1518.73, 1445.51], "mean": 1490.92, "stdev": 39.66},
+        "no_cap":    {"seeds": [1567.00, 1577.34, 1550.31], "mean": 1564.88, "stdev": 13.64},
         "capa_rank": {"seeds": [1528.80, 1511.30, 1502.68], "mean": 1514.26, "stdev": 13.31},
     },
     41_000: {
         "n4": 0, "n2": 0, "n1": 40,
         "pin":       {"seeds": [1599.03, 1608.04, 1610.14], "mean": 1605.73, "stdev": 5.90},
         "no_sink":   {"seeds": [1574.15, 1564.70, 1592.99], "mean": 1577.28, "stdev": 14.41},
+        "no_cap":    {"seeds": [1588.91, 1620.13, 1588.12], "mean": 1599.05, "stdev": 18.26},
         "capa_rank": {"seeds": [1575.28, 1573.96, 1584.75], "mean": 1578.00, "stdev": 5.89},
     },
     66_000: {
         "n4": 0, "n2": 0, "n1": 64,
         "pin":       {"seeds": [1602.36, 1624.28, 1667.95], "mean": 1631.53, "stdev": 33.39},
         "no_sink":   {"seeds": [1610.97, 1611.14, 1623.67], "mean": 1615.26, "stdev": 7.28},
+        "no_cap":    {"seeds": [1613.33, 1592.10, 1650.57], "mean": 1618.67, "stdev": 29.60},
         "capa_rank": {"seeds": [1632.96, 1649.87, 1646.80], "mean": 1643.21, "stdev": 9.01},
     },
     106_000: {
         "n4": 1, "n2": 21, "n1": 57,
         "pin":       {"seeds": [1666.19, 1707.10, 1717.84], "mean": 1697.05, "stdev": 27.25},
         "no_sink":   {"seeds": [1662.78, 1686.31, 1700.15], "mean": 1683.08, "stdev": 18.89},
+        "no_cap":    {"seeds": [1675.56, 1710.81, 1714.75], "mean": 1700.37, "stdev": 21.58},
         "capa_rank": {"seeds": [1680.42, 1709.87, 1726.35], "mean": 1705.54, "stdev": 23.27},
     },
     170_000: {
         "n4": 8, "n2": 55, "n1": 24,
         "pin":       {"seeds": [1713.90, 1715.61, 1737.39], "mean": 1722.30, "stdev": 13.09},
         "no_sink":   {"seeds": [1708.54, 1722.14, 1722.46], "mean": 1717.72, "stdev": 7.94},
+        "no_cap":    {"seeds": [1693.71, 1703.30, 1718.24], "mean": 1705.08, "stdev": 12.36},
         "capa_rank": {"seeds": [1722.91, 1704.67, 1712.32], "mean": 1713.30, "stdev": 9.16},
     },
     273_000: {
         "n4": 2, "n2": 77, "n1": 104,
         "pin":       {"seeds": [1748.24, 1740.66, 1753.78], "mean": 1747.56, "stdev": 6.59},
         "no_sink":   {"seeds": [1750.67, 1737.85, 1722.67], "mean": 1737.07, "stdev": 14.01},
+        "no_cap":    {"seeds": [1746.90, 1701.78, 1737.14], "mean": 1728.61, "stdev": 23.74},
         "capa_rank": {"seeds": [1771.12, 1754.32, 1759.18], "mean": 1761.54, "stdev": 8.65},
     },
     439_000: {
         "n4": 4, "n2": 111, "n1": 190,
         "pin":       {"seeds": [1784.96, 1790.61, 1786.11], "mean": 1787.22, "stdev": 2.98},
         "no_sink":   {"seeds": [1782.07, 1791.39, 1798.77], "mean": 1790.74, "stdev": 8.37},
+        "no_cap":    {"seeds": [1745.30, 1762.02, 1763.62], "mean": 1756.98, "stdev": 10.15},
         "capa_rank": {"seeds": [1808.59, 1816.05, 1836.75], "mean": 1820.46, "stdev": 14.59},
     },
     589_824: {
         "n4": 25, "n2": 206, "n1": 64,
         "pin":       {"seeds": [1805.60, 1798.21, 1780.39], "mean": 1794.73, "stdev": 12.96},
         "no_sink":   {"seeds": [1807.38, 1783.51, 1776.70], "mean": 1789.19, "stdev": 16.11},
+        "no_cap":    {"seeds": [1798.18, 1784.77, 1780.39], "mean": 1787.78, "stdev": 9.27},
         "capa_rank": {"seeds": [1803.89, 1810.92, 1791.85], "mean": 1802.22, "stdev": 9.64},
     },
 }
 
 # ============================================================
 # Sink-detector sensitivity (MME, 3 PCA seeds): threshold ratio tau
-# (default 100) and the top-2 candidate cap (default on), at a low, middle
-# and high budget, with the Proposed tier sizes. tau=100 with the cap and
-# no sink handling at these budgets are in ABLATION_SINK_MME_SEEDED.
+# (default 100) at a low, middle and high budget, with the Proposed tier
+# sizes. tau=100, no sink handling and the no-cap variant at these budgets
+# are in ABLATION_SINK_MME_SEEDED.
 # Reproduce: python reproduce.py sink-threshold
 # ============================================================
 SINK_THRESHOLD_MME = {
@@ -644,19 +654,16 @@ SINK_THRESHOLD_MME = {
         "ratio25":  {"seeds": [1556.24, 1551.48, 1501.65], "mean": 1536.45, "stdev": 30.24},
         "ratio50":  {"seeds": [1556.24, 1551.48, 1496.65], "mean": 1534.79, "stdev": 33.12},
         "ratio200": {"seeds": [1527.70, 1551.48, 1486.27], "mean": 1521.82, "stdev": 33.00},
-        "no_cap":   {"seeds": [1567.00, 1577.34, 1550.31], "mean": 1564.88, "stdev": 13.64},
     },
     170_000: {
         "ratio25":  {"seeds": [1714.78, 1715.90, 1738.56], "mean": 1723.08, "stdev": 13.42},
         "ratio50":  {"seeds": [1715.53, 1715.90, 1738.56], "mean": 1723.33, "stdev": 13.19},
         "ratio200": {"seeds": [1707.17, 1709.25, 1738.37], "mean": 1718.26, "stdev": 17.44},
-        "no_cap":   {"seeds": [1693.71, 1703.30, 1718.24], "mean": 1705.08, "stdev": 12.36},
     },
     589_824: {
         "ratio25":  {"seeds": [1805.60, 1797.46, 1780.39], "mean": 1794.48, "stdev": 12.87},
         "ratio50":  {"seeds": [1805.60, 1797.46, 1780.39], "mean": 1794.48, "stdev": 12.87},
         "ratio200": {"seeds": [1804.65, 1796.49, 1780.16], "mean": 1793.77, "stdev": 12.47},
-        "no_cap":   {"seeds": [1798.18, 1784.77, 1780.39], "mean": 1787.78, "stdev": 9.27},
     },
 }
 

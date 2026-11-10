@@ -206,8 +206,8 @@ python validate.py --dataset mme --baseline --save
 |---|---|---|---|
 | `python reproduce.py main` | PSID-Q1/Q2/Q4 vs. Proposed, 4 benchmarks × 8 budgets × 3 seeds | Table II, Fig. 4 (filled markers) | 360 |
 | `python reproduce.py fp16` | Original LLaVA-1.5 (576 tokens, FP16) | Table II (last row), Table VI | 4 |
-| `python reproduce.py sink` | Sink handling: none / demotion (ours) / contribution rank, MME, 8 budgets × 3 seeds | Table III | 72 |
-| `python reproduce.py sink-threshold` | Detector sensitivity: τ ∈ {25, 50, 200} and no top-2 cap, MME, 3 budgets × 3 seeds | Table V | 36 |
+| `python reproduce.py sink` | Sink handling: none / demotion of top-2 (ours) / demotion of all candidates (no cap) / contribution rank, MME, 8 budgets × 3 seeds | Table III | 96 |
+| `python reproduce.py sink-threshold` | Detector sensitivity: τ ∈ {25, 50, 200}, MME, 3 budgets × 3 seeds | Table V | 27 |
 | `python reproduce.py snap-refill` | Round-down-and-refill at 7 midpoint budgets (+ uniform baselines and proportional scaling) | Fig. 4 (hollow markers) | 324 |
 | `python reproduce.py search` | Offline VQAv2 LUT search | Table I | 8 budgets × 50 trials |
 | `python reproduce.py sink-explore` | Extra sink variants (`capa`, `capa_full`, `value_rank`, `capa_rank_cap`); not in the paper | – | 96 |

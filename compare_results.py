@@ -93,7 +93,7 @@ def cmp_fp16(rd, seeds):
 def cmp_sink(rd, seeds):
     t = Table("Ablation: sink handling, MME (mean over PCA seeds)")
     for B, row in P.ABLATION_SINK_MME_SEEDED.items():
-        for v in ("pin", "no_sink", "capa_rank"):
+        for v in ("pin", "no_sink", "no_cap", "capa_rank"):
             ours, n = seed_mean(rd, "mme", row["n4"], row["n2"], row["n1"], seeds, SINK_VARIANTS[v][1])
             t.add(f"B={B:<7} {v}", "mme", ours, n, row[v]["mean"])
     return t.show()

@@ -121,7 +121,7 @@ def _jobs_sink(a, variants):
 
 
 def jobs_sink(a):
-    return _jobs_sink(a, ["pin", "no_sink", "capa_rank"])
+    return _jobs_sink(a, ["pin", "no_sink", "no_cap", "capa_rank"])
 
 
 def jobs_sink_explore(a):
@@ -129,11 +129,11 @@ def jobs_sink_explore(a):
 
 
 def jobs_sink_threshold(a):
-    """Detector sensitivity: threshold ratio and the top-2 candidate cap, at a
-    low, middle and high budget (pin / no_sink at these budgets come from `sink`)."""
+    """Detector sensitivity: threshold ratio at a low, middle and high budget
+    (pin / no_sink / no_cap at these budgets come from `sink`)."""
     if not a.budgets:
         a.budgets = THRESHOLD_BUDGETS
-    return _jobs_sink(a, ["ratio25", "ratio50", "ratio200", "no_cap"])
+    return _jobs_sink(a, ["ratio25", "ratio50", "ratio200"])
 
 
 def jobs_snap_refill(a):
