@@ -10,7 +10,7 @@ interrupted sweep can simply be restarted.
     python reproduce.py main          # Main results: SP-Q1/Q2/Q4 vs Proposed, 4 benchmarks x 8 budgets x 3 seeds
     python reproduce.py fp16          # Unmodified LLaVA-1.5 (576 tokens, FP16) reference
     python reproduce.py sink          # Ablation: sink handling (pin / none / capa_rank), MME, 8 budgets x 3 seeds
-    python reproduce.py sink-threshold  # Detector sensitivity: ratio 25/50/200 and no top-2 cap, MME, 3 budgets x 3 seeds
+    python reproduce.py sink-threshold  # Detector sensitivity: ratio 25/50/200, MME, 3 budgets x 3 seeds
     python reproduce.py sink-explore  # Ablation: extra CAPA-style variants (capa / capa_full / value_rank / capa_rank_cap)
     python reproduce.py snap-refill   # Snap-and-refill at the 7 midpoint budgets (S1 vs S2 vs uniform)
     python reproduce.py search        # Re-run the offline VQAv2 LUT search (8 budgets)

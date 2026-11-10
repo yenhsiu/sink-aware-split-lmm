@@ -5,8 +5,9 @@ sink_statistics.py -- attention-sink statistics of CLIP ViT-L/14-336 on evaluati
 Runs only the vision encoder (no LLM), so it needs about 1-2 GB of GPU memory.
 For a random sample of images from each benchmark it reports:
 
-  * how often the detector flags a sink (top-2 candidates, score > ratio x median),
-    for several thresholds `ratio`, and without the top-2 cap;
+  * how often the detector finds a sink (candidates: score > ratio x median;
+    sinks: at most the two highest candidates), for several thresholds `ratio`,
+    and without the cap of two;
   * the share of CLS-attention mass absorbed by the flagged tokens;
   * for each LUT anchor's token count N, how often PruneSID selects at least one
     flagged sink into the transmitted set (the case where sink-aware demotion acts).

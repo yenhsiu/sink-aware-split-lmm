@@ -578,8 +578,8 @@ BASELINE_FP16 = {
 # budget; only the treatment of detected sink candidates changes:
 #   pin       -- detected sinks pinned to the lowest tier (the method)
 #   no_sink   -- no sink detection (--no-sink-filter)
-#   no_cap    -- like pin, but every token above 100x the median is a sink,
-#                not only the top two (--sink-max-candidates 576)
+#   no_cap    -- like pin, but every candidate above 100x the median is
+#                demoted, not at most the two highest (--sink-max-candidates 576)
 #   capa_rank -- no sink detection; tokens ranked by CAPA contribution
 # Reproduce: python reproduce.py sink
 # ============================================================

@@ -189,7 +189,7 @@ python validate.py --dataset mme --n4 25 --n2 0  --n1 0   --save   # PSID-Q4
 python validate.py --dataset mme --budget 106000 --no-sink-filter --save            # no sink handling
 python validate.py --dataset mme --budget 106000 --sink-mode capa_rank --save       # contribution-based ranking
 python validate.py --dataset mme --budget 106000 --sink-ratio 200 --save            # threshold 200x the median
-python validate.py --dataset mme --budget 106000 --sink-max-candidates 576 --save   # no top-2 cap
+python validate.py --dataset mme --budget 106000 --sink-max-candidates 576 --save   # demote every candidate (no cap of two)
 ```
 
 ### Original LLaVA-1.5 (576 tokens, FP16)
@@ -206,7 +206,7 @@ python validate.py --dataset mme --baseline --save
 |---|---|---|---|
 | `python reproduce.py main` | PSID-Q1/Q2/Q4 vs. Proposed, 4 benchmarks × 8 budgets × 3 seeds | Table II, Fig. 4 (filled markers) | 360 |
 | `python reproduce.py fp16` | Original LLaVA-1.5 (576 tokens, FP16) | Table II (last row), Table VI | 4 |
-| `python reproduce.py sink` | Sink handling: none / demotion of top-2 (ours) / demotion of all candidates (no cap) / contribution rank, MME, 8 budgets × 3 seeds | Table III | 96 |
+| `python reproduce.py sink` | Sink handling: none / demotion of at most two sinks (ours) / demotion of all candidates (no cap) / contribution rank, MME, 8 budgets × 3 seeds | Table III | 96 |
 | `python reproduce.py sink-threshold` | Detector sensitivity: τ ∈ {25, 50, 200}, MME, 3 budgets × 3 seeds | Table V | 27 |
 | `python reproduce.py snap-refill` | Round-down-and-refill at 7 midpoint budgets (+ uniform baselines and proportional scaling) | Fig. 4 (hollow markers) | 324 |
 | `python reproduce.py search` | Offline VQAv2 LUT search | Table I | 8 budgets × 50 trials |

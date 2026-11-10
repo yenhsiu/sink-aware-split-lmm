@@ -5,8 +5,8 @@ internally) to decide who gets 4-bit vs 2-bit vs 1-bit, same scheme as the
 original PruMerge tier viz, so the two are directly comparable.
 
 Sink handling matches the method (sink mode 'pin' in clip_encoder.py
-token_prunesid_quant_select): only the top-2 tokens are sink candidates, and a
-candidate is a sink if its score exceeds 100x the median. Any flagged
+token_prunesid_quant_select): tokens scoring above 100x the median are sink
+candidates, and at most the two highest candidates are sinks. Any flagged
 candidate that is also in the PruneSID-selected N is pinned to the lowest
 (1-bit) tier regardless of its attention rank, and gets a distinct highlight
 border in the rendered tiles. Set SINK_MAX_CANDIDATES = 576 to show every
@@ -86,7 +86,7 @@ LEGEND_LABELS = {4: "4-bit", 2: "2-bit", 1: "1-bit", 0: "pruned"}
 SINK_BORDER_COLOR = (255, 0, 255, 255)  # bright magenta, drawn on top of the tier fill
 SINK_BORDER_WIDTH = 3
 SINK_RATIO = 100.0
-SINK_MAX_CANDIDATES = 2  # same top-2 cap as the pipeline (LLAVA_SINK_MAX_CANDIDATES)
+SINK_MAX_CANDIDATES = 2  # same cap of two sinks as the pipeline (LLAVA_SINK_MAX_CANDIDATES)
 
 
 class MiniTower:
