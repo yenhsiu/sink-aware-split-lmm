@@ -89,8 +89,11 @@ def _prunesid_similarity_nms(similarity_matrix, scores, threshold):
 
 
 def _detect_sink_count(sorted_scores: torch.Tensor, max_candidates: int = 2, ratio_threshold: float = 100.0) -> int:
-    """How many of the top `max_candidates` sorted (descending) scores are
-    attention-sink outliers: a candidate is flagged if it's more than
+    """Number of attention sinks: the tokens scoring more than
+    `ratio_threshold`x the median are sink candidates, and at most the
+    `max_candidates` highest of them are sinks. Since the candidates form a
+    prefix of the descending order, this equals checking the top
+    `max_candidates` scores in order. A candidate is flagged if it's more than
     `ratio_threshold`x the *median* of the full score distribution (the
     median is a robust stand-in for "typical, non-sink" score -- using the
     adjacent-rank ratio instead was found to be miscalibrated once attention

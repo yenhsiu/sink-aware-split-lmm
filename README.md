@@ -32,7 +32,7 @@ For the current uplink bandwidth, the edge decides how many visual tokens to sen
 
 1. **Token selection.** [PruneSID](https://github.com/ZhengyaoFang/PruneSID) selects `N` diverse tokens out of the 576 CLIP patch tokens.
 2. **Ranking.** The selected tokens are ranked by CLS attention, summed over all heads of the second-to-last ViT layer.
-3. **Sink-aware demotion.** Of the two highest-scoring tokens, each one whose score is more than 100× the median score is an *attention sink*. Sinks stay in the sequence, but they are moved to the end of the ranking.
+3. **Sink-aware demotion.** Every token whose score is more than 100× the median score (over all 576 tokens) is a sink candidate, and the two highest-scoring candidates, at most, are treated as *attention sinks*. Sinks stay in the sequence, but they are moved to the end of the ranking.
 4. **Mixed-precision quantization.** The first `n4` tokens in the ranking are sent at 4-bit, the next `n2` at 2-bit and the rest at 1-bit. The quantizer is MSE-optimal (Lloyd–Max) and is applied after a fixed random rotation (TurboQuant). The payload is `4096·n4 + 2048·n2 + 1024·n1` bits, and each token adds 18 bits of metadata.
 5. **Budget-optimal LUT.** For 8 anchor budgets, `(n4, n2, n1)` is searched offline on VQAv2 and stored in a lookup table.
 6. **Round-down-and-refill.** At runtime the edge takes the largest LUT entry whose full transmitted size, metadata included, meets the deadline. It then fills the remaining bandwidth with extra 1-bit tokens.
