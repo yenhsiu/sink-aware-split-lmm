@@ -226,7 +226,7 @@ BREAKDOWN_LABELS = {"edge": "T_edge (on-device)", "cloud": "T_cloud (server comp
 # Legend of the Figure 3b bar chart (paper: latency_breakdown_bar.pdf).
 BAR_LABELS = {
     "vit":      r'$T_{\mathrm{edge}}$: ViT forward',
-    "prunesid": r'$T_{\mathrm{edge}}$: PruneSID selection',
+    "prunesid": r'$T_{\mathrm{edge}}$: Token selection & ranking',
     "quant":    r'$T_{\mathrm{edge}}$: Quantization',
     "cloud":    r'$T_{\mathrm{cloud}}$: Server compute',
     "tx":       r'$T_{\mathrm{tx}}$: Transmission',
