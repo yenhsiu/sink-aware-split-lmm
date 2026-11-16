@@ -223,6 +223,14 @@ BREAKDOWN_COLORS = {"edge": "#9aa0ac", "cloud": "#f3a19f", "tx": COLORS[PROPOSED
                      "vit": "#6b7280", "prunesid": "#c7cbd1", "quant": "#e8c34a"}
 BREAKDOWN_LABELS = {"edge": "T_edge (on-device)", "cloud": "T_cloud (server compute)", "tx": "T_tx (transmission)",
                      "vit": "T_edge: ViT forward", "prunesid": "T_edge: PruneSID select", "quant": "T_edge: Quantize"}
+# Legend of the Figure 3b bar chart (paper: latency_breakdown_bar.pdf).
+BAR_LABELS = {
+    "vit":      r'$T_{\mathrm{edge}}$: ViT forward',
+    "prunesid": r'$T_{\mathrm{edge}}$: PruneSID selection',
+    "quant":    r'$T_{\mathrm{edge}}$: Quantization',
+    "cloud":    r'$T_{\mathrm{cloud}}$: Server compute',
+    "tx":       r'$T_{\mathrm{tx}}$: Transmission',
+}
 
 
 # Plain filled circles for every Tier-2 (PSID-Q1/Q2/Q4) line -- differentiated
@@ -537,11 +545,11 @@ def plot_figure3_bar(out_path="figure3b_latency_breakdown_bar.pdf", s_mbps=1.0):
 
     fig, ax = plt.subplots(figsize=(12, 7))
     x = np.arange(len(labels))
-    ax.bar(x, vit, color=BREAKDOWN_COLORS["vit"], label=BREAKDOWN_LABELS["vit"], zorder=3)
-    ax.bar(x, prunesid, bottom=vit, color=BREAKDOWN_COLORS["prunesid"], label=BREAKDOWN_LABELS["prunesid"], zorder=3)
-    ax.bar(x, quant, bottom=vit + prunesid, color=BREAKDOWN_COLORS["quant"], label=BREAKDOWN_LABELS["quant"], zorder=3)
-    ax.bar(x, cloud, bottom=vit + prunesid + quant, color=BREAKDOWN_COLORS["cloud"], label=BREAKDOWN_LABELS["cloud"], zorder=3)
-    ax.bar(x, tx, bottom=vit + prunesid + quant + cloud, color=BREAKDOWN_COLORS["tx"], label=BREAKDOWN_LABELS["tx"], zorder=3)
+    ax.bar(x, vit, color=BREAKDOWN_COLORS["vit"], label=BAR_LABELS["vit"], zorder=3)
+    ax.bar(x, prunesid, bottom=vit, color=BREAKDOWN_COLORS["prunesid"], label=BAR_LABELS["prunesid"], zorder=3)
+    ax.bar(x, quant, bottom=vit + prunesid, color=BREAKDOWN_COLORS["quant"], label=BAR_LABELS["quant"], zorder=3)
+    ax.bar(x, cloud, bottom=vit + prunesid + quant, color=BREAKDOWN_COLORS["cloud"], label=BAR_LABELS["cloud"], zorder=3)
+    ax.bar(x, tx, bottom=vit + prunesid + quant + cloud, color=BREAKDOWN_COLORS["tx"], label=BAR_LABELS["tx"], zorder=3)
 
     for xi, total in zip(x, totals):
         # Angled instead of horizontal -- PSID-Q1/Q2/Q4 and Proposed all land
